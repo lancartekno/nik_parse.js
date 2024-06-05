@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NIK Parser</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="src/nik_parse.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>NIK Parser</h1>
+        <input type="text" id="nikInput" placeholder="Enter NIK">
+        <button onclick="parseNIK()">Parse NIK</button>
+        <pre id="result"></pre>
+    </div>
+    <script>
+        function parseNIK() {
+            const nik = document.getElementById('nikInput').value;
+            nikParse(nik, function(result) {
+                document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+            });
+        }
+    </script>
+</body>
+</html>
